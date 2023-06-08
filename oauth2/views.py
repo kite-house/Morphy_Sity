@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, get_user
 from .models import Users
 import requests
@@ -20,7 +19,6 @@ def oauth2DiscordCheck(request):
     except KeyError:
         return render(request, 'error.html')
     auth = authenticate(request,user=user)
-    print(auth)
     if auth != None:
         access = Users.objects.values_list('access', flat=True).filter(discord_id=user['id']) 
         for access in access:

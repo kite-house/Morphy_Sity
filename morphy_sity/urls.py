@@ -26,3 +26,7 @@ urlpatterns = [
     path('oauth2/check', oauth2.oauth2DiscordCheck, name = "oauth2DiscordCheck"),
     path('morphydb', morphydb.morphydb, name = 'morphydb')
 ]
+
+
+handler404 = 'error_handler.views.error404'
+handler500 = 'error_handler.views.error500'
