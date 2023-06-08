@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTHENTICATION_BACKENDS = [
     'oauth2.auth.AuthorizationUserDiscord'
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'oauth2',
-    'morphydb'
+    'morphydb',
+    'error_handler'
 ]
 
 MIDDLEWARE = [
